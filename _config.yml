@@ -6,10 +6,10 @@
 name: Allegromare
 
 # Short bio or description (displayed in the header)
-description: Kotlin Developer
+description: Kotlin
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: images/Logo.PNG
+avatar: images/jekyll-logo.png
 
 #
 # Flags below are optional
