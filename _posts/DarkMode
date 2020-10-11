@@ -1,0 +1,17 @@
+layout 	title
+post
+	
+Toast
+
+Un Toast è un messaggio che viene mostrato per un breve periodo all'utente. Generalmente si trova nel basso dello schermo (ma non necessariamente). Ad esempio, si usa per segnalare l'esito di un'azione (un tipico Toast è "Inseriemnto effettuato"). Rispetto ad un Dialog ha il vantaggio di non interrompere l'azione dell'utente e di non chiedere all'utente un'azione (si apre e si chiude automaticamente).
+
+TOAST STANDARD Per generare un Toast va richiamata una funzionalità delle API standard di android:
+
+Toast.makeText(this, "Questo è un Toast", Toast.LENGTH_SHORT).show()
+
+Per poter utilizzare questa funzione è necessario importare la specifica libreria tramite il comando "import android.widget.Toast" (aggiungere il comando in testa al codice nella specifica sezione oppure premere ALT + Invio sulla parola Toast che dovrebbe essere colorata in rosso da ANdroid Studio in quanto prima dell'import rappresenta un comando non noto).
+
+Qualora si voglia allungare il tempo durante il quale il Toast rimane attivo si può sostituire LENGTH_SHORT con LENGTH_LONG
+E' possibile personalizzare un Toast.
+
+Per prima cosa va creato un layout per il messaggio.
