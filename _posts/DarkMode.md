@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Toast
+title: Dark Mode
 ---
 
 Un Toast è un messaggio che viene mostrato per un breve periodo all'utente. Generalmente si trova nel basso dello schermo (ma non necessariamente).
