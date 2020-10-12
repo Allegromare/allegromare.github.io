@@ -60,3 +60,5 @@ switchDarkTheme.setOnCheckedChangeListener { buttonView, isChecked ->
 }
 
 Ora che abbiamo impostato il sistema possiamo andare a cambiare i colori, le forme, oppure salvare lo stato dello switch button in modo che alla riapertura dell'app venga proposto quanto scelto dall'utente, etc.... Buone modifiche ! 
+
+Codice sorgente: https://github.com/Allegromare/DarkTheme
