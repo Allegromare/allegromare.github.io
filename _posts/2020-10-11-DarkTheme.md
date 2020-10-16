@@ -60,7 +60,8 @@ Nel codice kotlin possiamo gestire lo switch button in modo da cambiare il tema 
         }
                 
 Per i "device" che utilizzano Android 10, il tema scuro può essere settato anche dalle impostazioni del dispositivo. Se l'utente ha settato il tema scuro, quando aprirà la nostra app troverà il tema scuro in automatico, senza dover fare nulla. Fantastico!
-Vi è però il problema dello switch button che rimarrà nello stato disattivo, anche se l'app sta utilizzando il tema scuro perchè scelto dall'utente attraverso il sistema operativo. Per risolvere questa questione è sufficiente effettuate il test su quale è la modalità di sistema e porre lo switch button nel relativo stato. Ecco il codice per una delle soluzioni possibili:
+
+Vi è però il problema dello switch button che rimarrà nello stato disattivo, anche se l'app sta utilizzando il tema scuro perchè scelto dall'utente attraverso il sistema operativo. Per risolvere questa questione è sufficiente effettuate il test su quale è la modalità di sistema e porre lo switch button nel relativo stato. Una delle possibili soluzioni è aggiungere android:configChanges="uiMode" all'interno del tag <actrivity> del file AndroidManifest.xml ed il seguente codice:
 
         val temaDiSistema = resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)
         when (temaDiSistema) {
@@ -69,7 +70,8 @@ Vi è però il problema dello switch button che rimarrà nello stato disattivo, 
             Configuration.UI_MODE_NIGHT_UNDEFINED -> { switchDarkTheme.isChecked = false }
         }
 
+A questo punto potremmo anche cancellare lo switch button perchè la nostra app prenderà il tema scuro se scelto a livello di sistema; così facendo però negheremmo il tema scuro a chi ha un sistema operativo ingferiore ad Android 10. Da notare inoltre che se l'utente cambia il tema tramite le impostazioni del sistema, le modifiche potrebbero non essere visibili sull'app fino a che non viene riavviata; per ovviare a ciò andrà previsto un listener.
 
 Ora che abbiamo impostato il sistema possiamo andare a cambiare i colori, le forme, oppure salvare lo stato dello switch button in modo che alla riapertura dell'app venga proposto quanto scelto dall'utente, etc.... Buone modifiche ! 
 
-Codice sorgente: https://github.com/Allegromare/DarkTheme
+A questo punto potremmo anche cancellare lo switch button perchè la nostra app prenderà il tema scuro se scelto a livello di sistema
