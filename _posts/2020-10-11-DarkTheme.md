@@ -54,10 +54,21 @@ Aggiungere al layout uno switch button che utilizzeremo per passare dalla modali
 
 Nel codice kotlin possiamo gestire lo switch button in modo da cambiare il tema a seconda dello stato con il seguente codice:
 
-switchDarkTheme.setOnCheckedChangeListener { buttonView, isChecked ->
-     if (isChecked) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES
-     else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-}
+        switchDarkTheme.setOnCheckedChangeListener { buttonView, isChecked ->
+           if (isChecked) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+           else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+                
+Per i "device" che utilizzano Android 10, il tema scuro può essere settato anche dalle impostazioni del dispositivo. Se l'utente ha settato il tema scuro, quando aprirà la nostra app troverà il tema scuro in automatico, senza dover fare nulla. Fantastico!
+Vi è però il problema dello switch button che rimarrà nello stato disattivo, anche se l'app sta utilizzando il tema scuro perchè scelto dall'utente attraverso il sistema operativo. Per risolvere questa questione è sufficiente effettuate il test su quale è la modalità di sistema e porre lo switch button nel relativo stato. Ecco il codice per una delle soluzioni possibili:
+
+        val temaDiSistema = resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)
+        when (temaDiSistema) {
+            Configuration.UI_MODE_NIGHT_YES -> { switchDarkTheme.isChecked = true }
+            Configuration.UI_MODE_NIGHT_NO -> { switchDarkTheme.isChecked = false }
+            Configuration.UI_MODE_NIGHT_UNDEFINED -> { switchDarkTheme.isChecked = false }
+        }
+
 
 Ora che abbiamo impostato il sistema possiamo andare a cambiare i colori, le forme, oppure salvare lo stato dello switch button in modo che alla riapertura dell'app venga proposto quanto scelto dall'utente, etc.... Buone modifiche ! 
 
