@@ -3,7 +3,11 @@ layout: post
 title: Python Virtual Environments
 ---
 
-CREAZIONE VIRTUAL ENVIRONMENT
-// python3 -m env
+Creazione: python3 -m env
+  Crea la sottocartella env contenente l'ambiente virtuale (da lanciarsi dalla cartella del progetto)
+  
+Attivazione: source env/bin/activate
+  Da lanciarsi dalla cartella del progetto
 
-ATTIVAZIONE
+Disattivazione: source env/bin/deactivate
+  Da lanciarsi dalla cartella di progetto
