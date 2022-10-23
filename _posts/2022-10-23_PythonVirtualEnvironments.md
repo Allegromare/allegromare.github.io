@@ -1,6 +1,6 @@
 ---
-layout	title
-post    Python Virtual Environments
+layout: 
+title: Python Virtual Environments
 ---
 
 CREAZIONE VIRTUAL ENVIRONMENT
