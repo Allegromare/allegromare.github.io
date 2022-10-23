@@ -1,6 +1,6 @@
 layout	title
 post    Python Virtual Environments
 
-AAA
+CREAZIONE VIRTUAL ENVIRONMENT
 
-// prova
+// python3 -m env
